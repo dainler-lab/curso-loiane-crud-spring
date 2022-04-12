@@ -5,9 +5,9 @@ import java.util.List;
 import com.dainler.model.Course;
 import com.dainler.repository.CourseRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
@@ -28,7 +28,7 @@ public class CourseController {
 
   // @RequestMapping(method = RequestMethod.GET) MESMA COISA AS DUAS ANOTAÇÕES
   @GetMapping
-  public List<Course> list() {
+  public @ResponseBody List<Course> list() {
     return courseRepository.findAll();
   }
 
